@@ -1,0 +1,31 @@
+{
+  "name": "diy_cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "/**/": "type:module 代表可以使用es模块",
+  "type": "module",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "chalk": "^5.3.0",
+    "commander": "^11.0.0",
+    "ini": "^4.1.1",
+    "inquirer": "^9.2.10",
+    "ora": "^7.0.1"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.3",
+    "@types/node": "^20.5.3",
+    "nodemon": "^3.0.1",
+    "typescript": "^5.1.6"
+  },
+  "bin": {
+    "cli-xm": "./bin/index.js"
+  }
+}
