@@ -1,19 +1,18 @@
+import { resolve } from 'path';
 // 获取远程项目模板
 
-import axios from 'axios';
+import { exec } from "child_process"
 
 // 用户可以通过命令行来配置
 export const defaultConfig = {
-    organazation: "xinmu-qinwa",
-    accsesstoken: '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'
+    organazation: "xinmu",
+    accsesstoken: 'd60c205a5468fe4f0282671ce33e64b0'
 }
-const url = `https://api.github.com/orgs/${defaultConfig.organazation}/repos`
+const url = `https://gitee.com/Xinmu11/testpage.git`
 const Bearer = `Bearer ${defaultConfig.accsesstoken}`
 export async function getOrgnazationProjects() {
-    const res = await axios.get(url,{
-        headers:{
-            "Authorization": Bearer
-        }
+    let res = await new Promise((resolve)=>{
+        resolve(exec('git clone https://gitee.com/Xinmu11/xinmuhub.git'))
     })
     return res
 }
