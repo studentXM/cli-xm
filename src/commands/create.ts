@@ -5,7 +5,6 @@ import path from "path"
 import { warpLoading } from "../utils/loading.js"
 import {getOrgnazationProjects} from '../utils/project.js'
 export default async function create(name:string,option:any){
-    console.log(name,option)
 
     const cwd = process.cwd()//当前项目工作目录,也就是项目的根目录
     const targetDir = path.join(cwd,name) // 把开发者设定的项目名称 作为一个目录 并拼接
@@ -23,6 +22,7 @@ export default async function create(name:string,option:any){
                     {name:'cancel',value:false}
                 ]}
             ])
+
             // cancel 取消
             if(!action){
                 return console.log('取消覆盖')
@@ -38,7 +38,6 @@ export default async function create(name:string,option:any){
         }
     }else{
         // 拉取项目模板
-        let res = await getOrgnazationProjects()
-        console.log(res.data)
+        let res = await getOrgnazationProjects(name)
     }
 }

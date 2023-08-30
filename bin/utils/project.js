@@ -7,20 +7,26 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-// 获取远程项目模板
+import util from 'util';
+const execAsync = util.promisify(exec);
 import { exec } from "child_process";
-// 用户可以通过命令行来配置
-export const defaultConfig = {
-    organazation: "xinmu",
-    accsesstoken: 'd60c205a5468fe4f0282671ce33e64b0'
-};
-const url = `https://gitee.com/Xinmu11/testpage.git`;
-const Bearer = `Bearer ${defaultConfig.accsesstoken}`;
-export function getOrgnazationProjects() {
+import { warpLoading } from '../utils/loading.js';
+export function getOrgnazationProjects(name) {
     return __awaiter(this, void 0, void 0, function* () {
-        let res = yield new Promise((resolve) => {
-            resolve(exec('git clone https://gitee.com/Xinmu11/xinmuhub.git'));
-        });
-        return res;
+        const fs = (yield import('fs')).default;
+        yield warpLoading('项目安装', () => __awaiter(this, void 0, void 0, function* () {
+            console.log(import.meta.url);
+            return 123;
+            yield execAsync('git clone https://github.com/studentXM/ysy.git');
+            // 修改项目名称
+            yield fs.rename('ysy', name, () => {
+                console.log('更改成功');
+            });
+        }));
+        yield warpLoading('安装依赖', () => __awaiter(this, void 0, void 0, function* () {
+            process.chdir(name);
+            // 安装依赖
+            yield execAsync('yarn install');
+        }));
     });
 }

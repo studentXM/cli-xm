@@ -1,18 +1,22 @@
-import { resolve } from 'path';
-// 获取远程项目模板
+import util from 'util';
 
+const execAsync = util.promisify(exec);
 import { exec } from "child_process"
-
-// 用户可以通过命令行来配置
-export const defaultConfig = {
-    organazation: "xinmu",
-    accsesstoken: 'd60c205a5468fe4f0282671ce33e64b0'
-}
-const url = `https://gitee.com/Xinmu11/testpage.git`
-const Bearer = `Bearer ${defaultConfig.accsesstoken}`
-export async function getOrgnazationProjects() {
-    let res = await new Promise((resolve)=>{
-        resolve(exec('git clone https://gitee.com/Xinmu11/xinmuhub.git'))
-    })
-    return res
+import { warpLoading } from '../utils/loading.js'
+export async function getOrgnazationProjects(name: string) {
+    const fs = (await import('fs')).default;
+    await warpLoading('项目安装', async () => {
+        console.log(import.meta.url)
+        return 123
+        await execAsync('git clone https://github.com/studentXM/ysy.git');
+        // 修改项目名称
+        await fs.rename('ysy', name,()=>{
+            console.log('更改成功')
+        });
+    });
+    await warpLoading('安装依赖', async () => {
+        process.chdir(name);
+        // 安装依赖
+        await execAsync('yarn install');
+    });
 }

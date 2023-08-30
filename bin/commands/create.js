@@ -15,7 +15,6 @@ import { warpLoading } from "../utils/loading.js";
 import { getOrgnazationProjects } from '../utils/project.js';
 export default function create(name, option) {
     return __awaiter(this, void 0, void 0, function* () {
-        console.log(name, option);
         const cwd = process.cwd(); //当前项目工作目录,也就是项目的根目录
         const targetDir = path.join(cwd, name); // 把开发者设定的项目名称 作为一个目录 并拼接
         // 判断该目录是否存在
@@ -49,8 +48,7 @@ export default function create(name, option) {
         }
         else {
             // 拉取项目模板
-            let res = yield getOrgnazationProjects();
-            console.log(res.data);
+            let res = yield getOrgnazationProjects(name);
         }
     });
 }
