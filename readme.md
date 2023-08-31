@@ -1,5 +1,27 @@
-npm install -g cli-xm 
+## Hello my friends！
 
-if cli-xm already exist and 
+##### welcome to my diyCli ，this is diyCli ，This scaffolding is currently targeted at react development environments
 
-npm install -g cli-xm --force
+#### this cli have
+
+- typescript 
+- tsx
+- scss
+- react
+- scss and cssmodule
+- postcss
+- eslint
+- other....
+
+#### let`s go!
+
+```
+npm i -g cli-xm
+```
+
+Now you have the system instruction cli-xm!
+
+```
+cli-xm create <projectName>
+```
+
