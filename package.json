@@ -11,7 +11,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "publish": "npm version patch & npm publish"
+    "ver": "npm version patch"
   },
   "keywords": [],
   "author": "",
