@@ -5,6 +5,10 @@
   "main": "index.js",
   "/**/": "type:module 代表可以使用es模块",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/studentXM/cli-xm.git"
+  },
   "scripts": {
     "build": "tsc"
   },

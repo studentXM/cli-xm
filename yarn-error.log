@@ -1,0 +1,57 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_global\node_modules\yarn\bin\yarn.js install
+
+PATH: 
+  C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\dotnet\;C:\Program Files (x86)\Tencent\微信web开发者工具\dll;%NVM_H;ME%;C:\Program Files\nodejs;C:\Program Files\Git\cmd;C:\Users\Administrator\AppData\Local\pnpm;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Roaming\nvm;C:\Program Files\nodejs\node_global;C:\Program Files\MySQL\MySQL Server 8.0\bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.12.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EEXIST: file already exists, mkdir 'C:\learning\diy-cli\diy_cli\node_modules\inquirer\node_modules'
+
+npm manifest: 
+  {
+    "name": "cli-xm",
+    "version": "1.1.0",
+    "description": "",
+    "main": "index.js",
+    "/**/": "type:module 代表可以使用es模块",
+    "type": "module",
+    "scripts": {
+      "build": "tsc"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "@octokit/core": "^5.0.0",
+      "axios": "^1.4.0",
+      "chalk": "^5.3.0",
+      "commander": "^11.0.0",
+      "ini": "^4.1.1",
+      "inquirer": "^9.2.10",
+      "ora": "^7.0.1"
+    },
+    "devDependencies": {
+      "@types/inquirer": "^9.0.3",
+      "@types/node": "^20.5.3",
+      "nodemon": "^3.0.1",
+      "typescript": "^5.1.6"
+    },
+    "bin": {
+      "cli-xm": "./bin/index.js"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
