@@ -14,7 +14,7 @@ import { warpLoading } from '../utils/loading.js';
 export function getOrgnazationProjects(name) {
     return __awaiter(this, void 0, void 0, function* () {
         yield warpLoading('项目安装', () => __awaiter(this, void 0, void 0, function* () {
-            const cloneCommand = `git clone --no-checkout --bare  https://github.com/studentXM/ysy.git ${name}`;
+            const cloneCommand = `git clone https://github.com/studentXM/ysy.git ${name}`;
             yield execAsync(cloneCommand);
         }));
         yield warpLoading('安装依赖', () => __awaiter(this, void 0, void 0, function* () {
