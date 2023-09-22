@@ -8,10 +8,6 @@ export async function getOrgnazationProjects(name: string) {
         const cloneCommand = `git clone https://github.com/studentXM/ysy.git ${name}`
         await execAsync(cloneCommand);
     });
-    await warpLoading('细节处理', async () => {
-        const cloneCommand = `git remote remove origin`
-        await execAsync(cloneCommand);
-    });
     await warpLoading('安装依赖', async () => {
         const installCommand = `yarn install`;
         // 进入目录
@@ -19,4 +15,12 @@ export async function getOrgnazationProjects(name: string) {
         // 安装依赖
         await execAsync(installCommand);
     });
+    // await warpLoading('细节处理', async () => {
+    //     const removeRemoteCommand = `cd ${name}`
+    //     await execAsync(removeRemoteCommand);
+    // });
+    // await warpLoading('细节处理', async () => {
+    //     const removeRemoteCommand = `git remote remove origin`
+    //     await execAsync(removeRemoteCommand);
+    // });
 }
