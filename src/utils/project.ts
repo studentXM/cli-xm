@@ -5,7 +5,7 @@ import { exec } from "child_process"
 import { warpLoading } from '../utils/loading.js'
 export async function getOrgnazationProjects(name: string) {
     await warpLoading('项目安装', async () => {
-        const cloneCommand = `git clone --no-checkout https://github.com/studentXM/ysy.git ${name}`
+        const cloneCommand = `git clone --no-checkout --bare  https://github.com/studentXM/ysy.git ${name}`
         await execAsync(cloneCommand);
     });
     await warpLoading('安装依赖', async () => {
