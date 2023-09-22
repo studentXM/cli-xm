@@ -8,7 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-console.log(`Welcome to Cli-xm`);
+console.log(`Welcome to Cli-xm - xinmu`);
 import { program } from "commander";
 import { createRequire } from "module";
 // 终端字体样式模块

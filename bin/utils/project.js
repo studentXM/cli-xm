@@ -24,13 +24,13 @@ export function getOrgnazationProjects(name) {
             // 安装依赖
             yield execAsync(installCommand);
         }));
-        // await warpLoading('细节处理', async () => {
-        //     const removeRemoteCommand = `cd ${name}`
-        //     await execAsync(removeRemoteCommand);
-        // });
-        // await warpLoading('细节处理', async () => {
-        //     const removeRemoteCommand = `git remote remove origin`
-        //     await execAsync(removeRemoteCommand);
-        // });
+        yield warpLoading('细节处理', () => __awaiter(this, void 0, void 0, function* () {
+            const removeRemoteCommand = `cd ${name}`;
+            yield execAsync(removeRemoteCommand);
+        }));
+        yield warpLoading('细节处理', () => __awaiter(this, void 0, void 0, function* () {
+            const removeRemoteCommand = `git remote remove origin`;
+            yield execAsync(removeRemoteCommand);
+        }));
     });
 }

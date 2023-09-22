@@ -1,5 +1,5 @@
 #! /usr/bin/env node
-console.log(`Welcome to Cli-xm`)
+console.log(`Welcome to Cli-xm - xinmu`)
 import {Command, program} from "commander";
 import { createRequire } from "module";
 // 终端字体样式模块
