@@ -14,7 +14,7 @@ import { warpLoading } from '../utils/loading.js';
 export function getOrgnazationProjects(name) {
     return __awaiter(this, void 0, void 0, function* () {
         yield warpLoading('项目安装', () => __awaiter(this, void 0, void 0, function* () {
-            const cloneCommand = `git clone https://github.com/studentXM/ysy.git ${name}`;
+            const cloneCommand = `git clone --no-checkout https://github.com/studentXM/ysy.git ${name}`;
             yield execAsync(cloneCommand);
         }));
         yield warpLoading('安装依赖', () => __awaiter(this, void 0, void 0, function* () {
@@ -23,14 +23,6 @@ export function getOrgnazationProjects(name) {
             process.chdir(name);
             // 安装依赖
             yield execAsync(installCommand);
-        }));
-        yield warpLoading('细节处理', () => __awaiter(this, void 0, void 0, function* () {
-            const removeRemoteCommand = `cd ${name}`;
-            yield execAsync(removeRemoteCommand);
-        }));
-        yield warpLoading('细节处理', () => __awaiter(this, void 0, void 0, function* () {
-            const removeRemoteCommand = `git remote remove origin`;
-            yield execAsync(removeRemoteCommand);
         }));
     });
 }
